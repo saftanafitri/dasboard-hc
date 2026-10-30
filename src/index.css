@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --green-900: #05473A;
+  --green-700: #0B5D48;
+  --green-500: #1F7A5C;
+  --green-300: #3E8F74;
+  --bg-page:   #F1F5F2;
+  --surface:   #FFFFFF;
+  --text-heading: #04281F;
+  --text-muted:   #4B6358;
+  --border:    #E3EAE6;
+  --accent-orange: #FF5A1F;
+  --stat-blue:   #1D4ED8;
+  --stat-green:  #059669;
+  --stat-orange: #F59E0B;
+  --stat-dark:   #0B1F18;
+}
+
+.dark {
+  --green-900: #04362C;
+  --green-700: #084D3C;
+  --green-500: #1F7A5C;
+  --green-300: #4B9E83;
+  --bg-page:   #041D17;
+  --surface:   #072A22;
+  --text-heading: #E7F5EF;
+  --text-muted:   #82A796;
+  --border:    #0E4437;
+  --accent-orange: #FF6933;
+  --stat-blue:   #3B82F6;
+  --stat-green:  #10B981;
+  --stat-orange: #FBBF24;
+  --stat-dark:   #ECFDF5;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--bg-page);
+  color: var(--text-heading);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green-300);
+}
+
+/* Animation utilities */
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Chart container styling */
+.recharts-responsive-container {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+}
+
+.recharts-default-tooltip {
+  border-radius: 8px !important;
+  box-shadow: 0 10px 25px -5px rgba(5, 71, 58, 0.15) !important;
+  border: 1px solid var(--border) !important;
+  background-color: var(--surface) !important;
+  color: var(--text-heading) !important;
+  font-size: 13px !important;
+  padding: 8px 12px !important;
+}
